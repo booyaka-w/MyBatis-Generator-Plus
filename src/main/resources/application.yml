@@ -1,1 +1,1 @@
-server:  port: 1122  servlet:    context-path: /MyBatis-Generator-Plus
+server:  port: 1122  servlet:    context-path: /MyBatis-Generator-Plus    spring:  thymeleaf:    cache: false
