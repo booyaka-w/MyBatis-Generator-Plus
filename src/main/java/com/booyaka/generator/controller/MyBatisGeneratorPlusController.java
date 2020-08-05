@@ -28,7 +28,7 @@ public class MyBatisGeneratorPlusController {
 	
 	private static final String CONNECTION_CONF="?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&useSSL=false&transformedBitIsBoolean=true&allowPublicKeyRetrieval=true";
 	
-	private static final String QUERY_DATA_BASE_SQL="SELECT SCHEMA_NAME AS `DataBase` FROM	INFORMATION_SCHEMA.SCHEMATA";
+	private static final String QUERY_DATA_BASE_SQL="SELECT SCHEMA_NAME AS `DataBase` FROM INFORMATION_SCHEMA.SCHEMATA";
 	
 	@GetMapping("/index")
 	public String index() {
