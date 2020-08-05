@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="images/favicon.png">
     <title>MyBatis-Generator-Plus</title>
     <link rel="stylesheet" href="assets/css/dashlite.css?ver=1.4.0">
+    <link rel="stylesheet" href="plugin/bootstrap-table/bootstrap-table.css">
 </head>
 <body class="nk-body bg-lighter npc-general has-sidebar ">
 	<div class="nk-content ">
@@ -28,9 +29,9 @@
 							</div>
 							<div class="card card-bordered card-preview">
 								<div class="form-control-wrap">
-									<select class="form-control form-select" onchange="select()" id="dataBase" name="dataBase" data-placeholder="Select a option" required>
+									<select class="form-control form-select" onchange="select()" id="dataBase" name="dataBase" data-placeholder="Select DataBase" required>
 										<option label="empty" value=""></option>
-										<option th:each="dataBase:${dataBaseList}" value="${dataBase}" th:text="${dataBase}"></option>
+										<option th:each="dataBase:${dataBaseList}" th:text="${dataBase}"></option>
 									</select>
 								</div>
 							</div>
@@ -41,37 +42,8 @@
 							</div>
 							<div class="card card-bordered card-preview">
 								<div class="card-inner">
-									<table class="datatable-init nk-tb-list nk-tb-ulist" data-auto-responsive="false">
-										<thead>
-											<tr class="nk-tb-item nk-tb-head">
-												<th class="nk-tb-col"><span class="sub-text">TableName</span></th>
-												<th class="nk-tb-col tb-col-mb"><span class="sub-text">Remark</span></th>
-												<th class="nk-tb-col tb-col-md"><span class="sub-text">Operate</span></th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr class="nk-tb-item">
-												<td class="nk-tb-col">
-													<div class="user-card">
-														<div class="user-avatar bg-dim-primary d-none d-sm-flex">
-															<span>AB</span>
-														</div>
-														<div class="user-info">
-															<span class="tb-lead">Abu Bin Ishtiyak <span class="dot dot-success d-md-none ml-1"></span></span>
-															<span>info@softnio.com</span>
-														</div>
-													</div>
-												</td>
-												<td class="nk-tb-col tb-col-mb">
-													<span class="tb-amount">35040.34 <span class="currency">USD</span></span>
-												</td>
-												<td class="nk-tb-col nk-tb-col-tools">
-													<div class="drodown">
-														<a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-													</div>
-												</td>
-											</tr>
-										</tbody>
+									<table class="table table-striped m-b-1" id="table">
+										<thead><tr><td>Choice DataBase First</td></tr></thead>
 									</table>
 								</div>
 							</div>
@@ -81,16 +53,11 @@
 			</div>
 		</div>
 	</div>
-    <script src="assets/js/bundle.js?ver=1.4.0"></script>
-    <script src="assets/js/scripts.js?ver=1.4.0"></script>
-    <script type="text/javascript">
-    	function select(){
-    		var selects = document.getElementById("dataBase");
-   	        var indexs = selects.selectedIndex;
-   	        alert(selects.options[indexs].value);
-   	        alert(selects.options[indexs].text);
-    	}
-    </script>
+    <script type="text/javascript" src="plugin/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/bundle.js?ver=1.4.0"></script>
+    <script type="text/javascript" src="assets/js/scripts.js?ver=1.4.0"></script>
+    <script type="text/javascript" src="plugin/bootstrap-table/bootstrap-table.js"></script>
+    <script type="text/javascript" src="js/data-base-list.js"></script>
 </body>
 
 </html>
