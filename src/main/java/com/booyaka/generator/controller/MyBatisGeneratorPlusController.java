@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -46,7 +48,9 @@ public class MyBatisGeneratorPlusController {
 		DataSource dataSource  = DataSourceBuilder.create().type(HikariDataSource.class).url(url).driverClassName(driverClassName).username(userName).password(passWord).build();
 		Connection connection = dataSource.getConnection();
 		List<String> dataBaseList = queryDataBaseList(connection);
-		modelMap.addAllAttributes(dataBaseList);
+		Map<String,Object> attributes = new HashMap<>();
+		attributes.put("dataBaseList", dataBaseList);
+		modelMap.addAllAttributes(attributes);
 		return "data-base-list";
 	}
 	

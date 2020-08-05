@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx" class="js">
+<html lang="zxx" class="js" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="author" content="Softnio">
@@ -28,11 +28,8 @@
 							</div>
 							<div class="card card-bordered card-preview">
 								<div class="form-control-wrap ">
-									<select class="form-control form-select" id="fv-topics" name="fv-topics" data-placeholder="Select a option"
-									 required>
-										<option label="empty" value=""></option>
-										<option value="fv-gq">5.X</option>
-										<option value="fv-tq">8.X</option>
+									<select class="form-control form-select" id="dataBase" name="dataBase" required>
+										<option th:each="dataBase:${dataBaseList}" value="${dataBase}" th:text="${dataBase}"></option>
 									</select>
 								</div>
 							</div>
