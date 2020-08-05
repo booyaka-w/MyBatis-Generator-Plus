@@ -19,13 +19,13 @@
 				</div>
 				<div class="card card-bordered">
 					<div class="card-inner">
-						<form action="#" class="form-validate">
+						<form action="/MyBatis-Generator-Plus/connectionDataSource" method="post" class="form-validate">
 							<div class="row g-gs">
 								<div class="col-md-12">
 									<div class="form-group">
-										<label class="form-label" for="fv-full-name">DataSourceUrl</label>
+										<label class="form-label" for="fv-full-name">DataSourceHost</label>
 										<div class="form-control-wrap">
-											<input type="text" class="form-control" id="fv-full-name" name="fv-full-name" required>
+											<input type="text" class="form-control" id="host" name="host" placeholder="IP:PORT" value="127.0.0.1:3306" required>
 										</div>
 									</div>
 								</div>
@@ -33,7 +33,7 @@
 									<div class="form-group">
 										<label class="form-label" for="fv-email">UserName</label>
 										<div class="form-control-wrap">
-											<input type="email" class="form-control" id="fv-email" name="fv-email" required>
+											<input type="text" class="form-control" id="UserName" name="userName" placeholder="userName" value="root" required>
 										</div>
 									</div>
 								</div>
@@ -41,7 +41,7 @@
 									<div class="form-group">
 										<label class="form-label" for="fv-subject">PassWord</label>
 										<div class="form-control-wrap">
-											<input type="text" class="form-control" id="fv-subject" name="fv-subject" required>
+											<input type="text" class="form-control" id="PassWord" name="passWord" placeholder="passWord" value="root" required>
 										</div>
 									</div>
 								</div>
@@ -49,11 +49,9 @@
 									<div class="form-group">
 										<label class="form-label" for="fv-topics">Versions</label>
 										<div class="form-control-wrap ">
-											<select class="form-control form-select" id="fv-topics" name="fv-topics" data-placeholder="Select a option"
-											 required>
-												<option label="empty" value=""></option>
-												<option value="fv-gq">5.X</option>
-												<option value="fv-tq">8.X</option>
+											<select class="form-control form-select" id="versions" name="versions" data-placeholder="Select DataBase Versions" required>
+												<option value="5" selected="selected" >5.X(mysql-connector-java-5.1.49)</option>
+												<option value="8" >8.X(mysql-connector-java-8.0.21)</option>
 											</select>
 										</div>
 									</div>
