@@ -25,3 +25,7 @@ $(function select(){
 		} ],
 	})
 })
+
+function generator(){
+
+}
