@@ -44,10 +44,19 @@ public class MyBatisGeneratorPlusController {
 	public String index() {
 		return "index";
 	}
+	
+	@PostMapping("/generator")
+	public void generator(String rootPath,String extendsClassPath,String modelPath,String daoPath,String mapperPath,String servicePath) {
+		System.err.println("rootPath = "+ rootPath);
+		System.err.println("extendsClassPath = "+ extendsClassPath);
+		System.err.println("modelPath = "+ modelPath);
+		System.err.println("daoPath = "+ daoPath);
+		System.err.println("mapperPath = "+ mapperPath);
+		System.err.println("servicePath = "+ servicePath);
+	}
 
 	@PostMapping("/connectionDataSource")
-	public String connectionDataSource(ModelMap modelMap, String host, String userName, String passWord,
-			String versions) throws SQLException {
+	public String connectionDataSource(ModelMap modelMap, String host, String userName, String passWord, String versions) throws SQLException {
 		String url = "jdbc:mysql://" + host + CONNECTION_CONF;
 		String driverClassName = "";
 		if (VERSION5.equals(versions)) {
@@ -82,7 +91,7 @@ public class MyBatisGeneratorPlusController {
 	}
 
 	@GetMapping("/tableDetails")
-	public String getTableDetails(ModelMap modelMap, String tableName) throws SQLException {
+	public String getTableDetails(ModelMap modelMap, String tableName) {
 		Map<String, Object> attributes = new HashMap<>();
 		attributes.put("tableName", tableName);
 		modelMap.addAllAttributes(attributes);
@@ -146,8 +155,7 @@ public class MyBatisGeneratorPlusController {
 
 	private Connection getConnection(String url, String driverClassName, String userName, String passWord)
 			throws SQLException {
-		DataSource dataSource = DataSourceBuilder.create().type(HikariDataSource.class).url(url)
-				.driverClassName(driverClassName).username(userName).password(passWord).build();
+		DataSource dataSource = DataSourceBuilder.create().type(HikariDataSource.class).url(url).driverClassName(driverClassName).username(userName).password(passWord).build();
 		Connection connection = dataSource.getConnection();
 		return connection;
 	}
