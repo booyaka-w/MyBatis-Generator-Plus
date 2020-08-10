@@ -34,3 +34,7 @@ function select(){
 function toTableInfo(tableName){
 	window.location.href="/MyBatis-Generator-Plus/tableDetails?tableName="+$("#dataBase").val()+"."+tableName;
 }
+
+function generator(tableName){
+window.location.href="/MyBatis-Generator-Plus/generator?tableName="+$("#dataBase").val()+"."+tableName;
+}

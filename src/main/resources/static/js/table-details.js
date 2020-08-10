@@ -1,6 +1,5 @@
 var $table = $('#tableDetails');
 $(function select(){
-   	console.log()
    	$table.bootstrapTable({
 		url : '/MyBatis-Generator-Plus/tableDetailsData?tableName='+$("#table").val(),
 		cache: false,
