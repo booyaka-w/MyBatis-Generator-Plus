@@ -40,6 +40,37 @@ public class MyBatisGeneratorPlusController {
 
 	private static Connection CONNECTION = null;
 
+	@GetMapping("/generator")
+	@ResponseBody
+	public String generator(ModelMap modelMap, String tableName) throws SQLException {
+		List<Map<String, Object>> columnsList = new ArrayList<>();
+		String sql = QUERY_TABLE_DETAILS_SQL + tableName;
+		PreparedStatement preparedStatement = null;
+		try {
+			preparedStatement = CONNECTION.prepareStatement(sql);
+			ResultSet rs = preparedStatement.executeQuery(sql);
+			ResultSetMetaData data = rs.getMetaData();
+			for (int i = 1; i <= data.getColumnCount(); i++) {
+				Map<String, Object> map = new HashMap<>();
+				String columnName = data.getColumnName(i);
+				String columnTypeName = data.getColumnTypeName(i);
+				String columnClassName = data.getColumnClassName(i);
+				map.put("columnName", columnName);
+				map.put("columnTypeName", columnTypeName);
+				map.put("columnClassName", columnClassName);
+				columnsList.add(map);
+			}
+			return JSONArray.fromObject(columnsList).toString();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (preparedStatement != null) {
+				preparedStatement.close();
+			}
+		}
+		return JSONArray.fromObject(columnsList).toString();
+	}
+
 	@GetMapping("/index")
 	public String index() {
 		return "index";
