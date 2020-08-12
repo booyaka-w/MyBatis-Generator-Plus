@@ -14,7 +14,7 @@ public class GeneratorController {
 	public void generator(GeneratorEntity entity) {
 		boolean flag = mkdirs(entity);
 		if (flag) {
-
+			System.err.println(flag);
 		}
 
 	}
