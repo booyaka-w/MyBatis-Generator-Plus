@@ -2,21 +2,21 @@ package com.booyaka.generator.controller;
 
 import java.io.File;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.booyaka.generator.entity.GeneratorEntity;
 
-@Controller
+@RestController
 public class GeneratorController {
 
 	@PostMapping("/generator")
-	public void generator(GeneratorEntity entity) {
+	public String generator(GeneratorEntity entity) {
 		boolean flag = mkdirs(entity);
 		if (flag) {
 			System.err.println(flag);
 		}
-
+		return "table-details.html";
 	}
 
 	private boolean mkdirs(GeneratorEntity entity) {

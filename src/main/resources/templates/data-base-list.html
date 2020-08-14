@@ -53,6 +53,93 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="modal fade" tabindex="-1" id="modalForm">
+	    <div class="modal-dialog" role="document">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <h5 class="modal-title">GeneratorConfigure</h5>
+	                <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+	                    <em class="icon ni ni-cross"></em>
+	                </a>
+	            </div>
+	            <div class="modal-body">
+	                <form action="/MyBatis-Generator-Plus/generator" method="post" class="form-validate is-alter">
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="form-label" for="full-name">RootPath</label>
+								<div class="form-control-wrap">
+									<input type="text" class="form-control" id="rootPath" name="rootPath" value="F:\Generator" required>
+								</div>
+							</div>
+							<div class="form-group col-md-12">
+								<label class="form-label" for="phone-no">ExtendsClassPath</label>
+								<div class="form-control-wrap">
+									<input type="text" class="form-control" id="extendsClassPath" name="extendsClassPath">
+								</div>
+							</div>
+							<div class="form-group col-md-6">
+								<label class="form-label" for="email-address">ModelPath</label>
+								<div class="form-control-wrap">
+									<input type="text" class="form-control" id="modelPath" name="modelPath" value="/model" required>
+								</div>
+							</div>
+							<div class="form-group col-md-6">
+								<label class="form-label" for="phone-no">DaoPath</label>
+								<div class="form-control-wrap">
+									<input type="text" class="form-control" id="daoPath" name="daoPath" value="/dao" required>
+								</div>
+							</div>
+							<div class="form-group col-md-6">
+								<label class="form-label" for="phone-no">MapperPath</label>
+								<div class="form-control-wrap">
+									<input type="text" class="form-control" id="mapperPath" name="mapperPath" value="/mapper" required>
+								</div>
+							</div>
+							<div class="form-group col-md-6">
+								<label class="form-label" for="phone-no">ServicePath</label>
+								<div class="form-control-wrap">
+									<input type="text" class="form-control" id="servicePath" name="servicePath" value="/service" required>
+								</div>
+							</div>
+							
+							<div class="form-group col-md-12">
+							    <label class="form-label">ExpandMethods</label>
+							    <ul class="custom-control-group g-3 align-center">
+							        <li>
+							            <div class="custom-control custom-control-sm custom-checkbox">
+							                <input type="checkbox" class="custom-control-input" id="pay-card">
+							                <label class="custom-control-label" for="pay-card">PageHelper</label>
+							            </div>
+							        </li>
+							        <li>
+							            <div class="custom-control custom-control-sm custom-checkbox">
+							                <input type="checkbox" class="custom-control-input" id="pay-bitcoin">
+							                <label class="custom-control-label" for="pay-bitcoin">ToString</label>
+							            </div>
+							        </li>
+							        <li>
+							            <div class="custom-control custom-control-sm custom-checkbox">
+							                <input type="checkbox" class="custom-control-input" id="pay-cash">
+							                <label class="custom-control-label" for="pay-cash">Serializable</label>
+							            </div>
+							        </li>
+							    </ul>
+							</div>
+							
+							<div class="form-group col-md-12">
+							    <button type="submit" class="btn btn-lg btn-primary">Generator</button>
+							</div>
+						</div>
+	                </form>
+	            </div>
+	            <div class="modal-footer bg-light">
+	                <span class="sub-text">Modal Footer Text</span>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	
     <script type="text/javascript" src="plugin/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="assets/js/bundle.js?ver=1.4.0"></script>
     <script type="text/javascript" src="assets/js/scripts.js?ver=1.4.0"></script>

@@ -25,7 +25,7 @@ function select(){
 			align : 'center',
 			width : 100,
 			formatter : function(value, row, index) {
-				return "<a class=\"text-info\" href=\"javascript:void(0)\" onclick=\"toTableInfo('"+row.TABLE+"')\">详情</a> "
+				return "<a class=\"text-info\" href=\"javascript:void(0)\" onclick=\"generator('"+row.TABLE+"')\">详情</a> "
 			}
 		} ],
 	})
@@ -36,5 +36,6 @@ function toTableInfo(tableName){
 }
 
 function generator(tableName){
-window.location.href="/MyBatis-Generator-Plus/generator?tableName="+$("#dataBase").val()+"."+tableName;
+	$('#modalForm').modal('show');
+	//window.location.href="/MyBatis-Generator-Plus/generator?tableName="+$("#dataBase").val()+"."+tableName;
 }
