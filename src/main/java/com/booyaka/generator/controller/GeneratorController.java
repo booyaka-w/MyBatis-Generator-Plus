@@ -12,33 +12,20 @@ public class GeneratorController {
 
 	@PostMapping("/generator")
 	public String generator(GeneratorEntity entity) {
-		boolean flag = mkdirs(entity);
-		if (flag) {
-			System.err.println(flag);
-		}
+		mkdirs(entity);
 		return "table-details.html";
 	}
 
-	private boolean mkdirs(GeneratorEntity entity) {
-		boolean flag = false;
+	private void mkdirs(GeneratorEntity entity) {
 		File file = new File(entity.getModelPath());
-		flag = file.mkdirs();
-		if (flag) {
-			file = new File(entity.getDaoPath());
-			flag = file.mkdirs();
-		}
-		if (flag) {
-			file = new File(entity.getMapperPath());
-			flag = file.mkdirs();
-		}
-		if (flag) {
-			file = new File(entity.getServicePath());
-			flag = file.mkdirs();
-		}
-		if (flag) {
-			file = new File(entity.getServiceImplPath());
-			flag = file.mkdirs();
-		}
-		return flag;
+		file.mkdirs();
+		file = new File(entity.getDaoPath());
+		file.mkdirs();
+		file = new File(entity.getMapperPath());
+		file.mkdirs();
+		file = new File(entity.getServicePath());
+		file.mkdirs();
+		file = new File(entity.getServiceImplPath());
+		file.mkdirs();
 	}
 }
